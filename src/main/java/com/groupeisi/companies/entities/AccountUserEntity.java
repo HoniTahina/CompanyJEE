@@ -31,6 +31,16 @@ public class AccountUserEntity implements Serializable{
 	public void setState(boolean state) {
 		this.state = state;
 	}
+	public AccountUserEntity(long id, String email, String password, boolean state) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.state = state;
+	}
+	public AccountUserEntity() {
+		super();
+	}
 	
 
 }
