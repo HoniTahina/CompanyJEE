@@ -13,36 +13,44 @@ import org.slf4j.LoggerFactory;
 /**
  * Servlet implementation class Login
  */
-@WebServlet(name = "login" , value =  "/login")
+@WebServlet(name = "login", value = "/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Logger logger = LoggerFactory.getLogger(LoginServlet.class);
 
-    /**
-     * Default constructor. 
-     */
-    public LoginServlet() {
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * Default constructor.
+	 */
+	public LoginServlet() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		String userName = request.getParameter("username");
 		String password = request.getParameter("password");
 		logger.info("email envoyé: {} ", userName);
-		
-		response.sendRedirect("welcome");
+		if (userName.equals("honi@gmail.com") && password.equals("passer")) {
+			request.getSession().setAttribute("username", password);
+			response.sendRedirect("welcome");
+		} else {
+			response.sendRedirect("login");
+		}
 	}
 
 }

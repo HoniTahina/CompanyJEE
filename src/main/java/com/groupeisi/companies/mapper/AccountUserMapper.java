@@ -5,40 +5,38 @@ import com.groupeisi.companies.dto.AccountUserDto;
 import com.groupeisi.companies.entities.AccountUserEntity;
 
 public class AccountUserMapper {
-	
+
 	private AccountUserMapper() {
-		
+
 	}
 
 	public static AccountUserEntity toAccountUserEntity(AccountUserDto accountUserDto) {
-		
+
 		AccountUserEntity accountUserEntity = new AccountUserEntity();
-		
+
 		accountUserEntity.setId(accountUserDto.getId());
 		accountUserEntity.setEmail(accountUserDto.getEmail());
 		accountUserEntity.setPassword(accountUserDto.getPassword());
 		accountUserEntity.setState(accountUserDto.isState());
-		
-		return accountUserEntity;	
+
+		return accountUserEntity;
 	}
-	
+
 	public static AccountUserDto toAccountUserDto(AccountUserEntity accountUserEntity) {
-		
+
 		AccountUserDto accountUserDto = new AccountUserDto();
-		
+
 		accountUserDto.setId(accountUserEntity.getId());
 		accountUserDto.setEmail(accountUserEntity.getEmail());
 		accountUserDto.setPassword(accountUserEntity.getPassword());
 		accountUserDto.setState(accountUserEntity.isState());
-		
-		return accountUserDto;	
+
+		return accountUserDto;
 	}
-	
+
 	public static List<AccountUserDto> toListAccountUserDto(List<AccountUserEntity> accountUserEntity) {
-	
-		return accountUserEntity.stream()
-							.map(AccountUserMapper::toAccountUserDto)
-							.toList();
+
+		return accountUserEntity.stream().map(AccountUserMapper::toAccountUserDto).toList();
 	}
 
 }

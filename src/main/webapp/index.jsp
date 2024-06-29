@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<title>Page de connexion</title>
+		<link rel="shortcut icon" href="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="public/css/style.css" />
 	</head>
 	<body>
