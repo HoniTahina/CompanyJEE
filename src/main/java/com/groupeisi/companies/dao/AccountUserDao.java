@@ -4,14 +4,13 @@ import java.util.List;
 
 import com.groupeisi.companies.entities.AccountUserEntity;
 
-public class AccountUserDao implements IAccountUserDao {
+public class AccountUserDao extends RepositoryImpl<AccountUserEntity> implements IAccountUserDao {
 
 	@Override
 	public AccountUserEntity login(String email, String password) {
 		return new AccountUserEntity(1L, "a@gmail.com", "passer", true);
 	}
 
-	@Override
 	public List<AccountUserEntity> findAll() {
 
 		return List.of(new AccountUserEntity(1L, "a@gmail.com", "passer", true),

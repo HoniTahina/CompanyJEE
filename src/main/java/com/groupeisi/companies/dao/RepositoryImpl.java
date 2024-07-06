@@ -55,7 +55,7 @@ public class RepositoryImpl<T> implements Repository<T> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<T> list(T t) {
-
+		// Utilisation de l'API criteria
 		CriteriaBuilder cb = session.getCriteriaBuilder();
 
 		CriteriaQuery<T> cq = (CriteriaQuery<T>) cb.createQuery(t.getClass());
