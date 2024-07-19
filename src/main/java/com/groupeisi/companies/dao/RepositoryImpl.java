@@ -12,7 +12,9 @@ import org.hibernate.Transaction;
 import com.groupeisi.companies.config.HibernateUtil;
 
 public class RepositoryImpl<T> implements Repository<T> {
-	private Session session = HibernateUtil.getSessionFactory().openSession();
+	protected void name() {
+	
+} Session session = HibernateUtil.getSessionFactory().openSession();
 	Transaction transaction = null;
 
 	@Override

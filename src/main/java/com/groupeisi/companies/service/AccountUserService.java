@@ -32,9 +32,10 @@ public class AccountUserService implements IAccountUserService {
 	}
 
 	private Optional<AccountUserDto> testLogin(String email, String password) {
-		AccountUserEntity accountUserEntity = accountUserDao.login(email, password);
-		if (accountUserEntity != null) {
-			AccountUserDto accountUserDto = AccountUserMapper.toAccountUserDto(accountUserEntity);
+		Optional<AccountUserEntity> accountUserEntity = accountUserDao.login(email, password);
+
+		if (accountUserEntity.isPresent()) {
+			AccountUserDto accountUserDto = AccountUserMapper.toAccountUserDto(accountUserEntity.get());
 			return Optional.of(accountUserDto);
 		} else {
 			return Optional.empty();
@@ -44,11 +45,18 @@ public class AccountUserService implements IAccountUserService {
 	@Override
 	public Optional<List<AccountUserDto>> findAll() {
 
-		return Optional.empty();
+		List<AccountUserEntity> accountUserEntityList = accountUserDao.list(new AccountUserEntity());
+
+		return Optional.of(AccountUserMapper.toListAccountUserDto(accountUserEntityList));
+
 	}
 
 	public void setAccountUserDao(IAccountUserDao accountUserDao) {
 		this.accountUserDao = accountUserDao;
 	}
 
+	@Override
+	public boolean save(AccountUserDto accountUserDto) {
+		return accountUserDao.save(AccountUserMapper.toAccountUserEntity(accountUserDto));
+	}
 }
