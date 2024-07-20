@@ -30,32 +30,10 @@ public class HibernateUtil {
 
 				Properties settings = new Properties();
 				settings.put(AvailableSettings.DRIVER, "com.mysql.cj.jdbc.Driver");
-				/*
-				 * LOG.info("URL DB : {} ", reader.getProperty("db.urlProd"));
-				 * LOG.info("DB USER: {}", reader.getProperty("db.user"));
-				 * LOG.info("DB PASSWORD : {}", reader.getProperty("db.pwd"));
-				 */
-				Map<String, String> env = System.getenv();
-				String dbUrlProdurl = env.get("DB_URL_PROD");
-				String securityDbUser = env.get("SECURITY_DB_USER");
-				String securityDbPwd = env.get("SECURITY_DB_PWD");
 
-				LOG.info("URL DB POUR DOCKER : {}", dbUrlProdurl);
-				LOG.info("DB USER POUR DOCKER : {}", securityDbUser);
-				LOG.info("DB PASSWORD POUR DOCKER : {}", securityDbPwd);
-
-				/*
-				 * if (!dbUrlProdurl.isBlank() && !securityDbUser.isBlank() &&
-				 * !securityDbPwd.isBlank()) { settings.put(AvailableSettings.URL,
-				 * dbUrlProdurl); settings.put(AvailableSettings.USER, securityDbUser);
-				 * settings.put(AvailableSettings.PASS, securityDbPwd); } else {
-				 */
 				settings.put(AvailableSettings.URL, reader.getProperty("db.urlDev"));
 				settings.put(AvailableSettings.USER, reader.getProperty("db.username"));
 				settings.put(AvailableSettings.PASS, reader.getProperty("db.password"));
-				/*
-				 * }
-				 */
 				settings.put(AvailableSettings.DIALECT, "org.hibernate.dialect.MySQL8Dialect");
 				// cette ligne est très importante
 				settings.put(AvailableSettings.HBM2DDL_AUTO, "update");

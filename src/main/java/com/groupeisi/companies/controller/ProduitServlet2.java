@@ -21,14 +21,14 @@ import com.groupeisi.companies.service.IAccountUserService;
  * Servlet implementation class AdminServlet
  */
 @WebServlet(name = "admin", value = "/admin")
-public class AdminServlet extends HttpServlet {
+public class ProduitServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private IAccountUserService accountUserService = new AccountUserService();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public AdminServlet() {
+	public ProduitServlet2() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
