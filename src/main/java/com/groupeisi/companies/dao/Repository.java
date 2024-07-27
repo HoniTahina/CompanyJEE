@@ -11,5 +11,6 @@ public interface Repository<T> {
 
 	public List<T> list(T t);
 
+	public T get(String id,T t);
 	public T get(long id, T t);
 }

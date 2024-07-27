@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.groupeisi.companies.dao.AccountUserDao;
 import com.groupeisi.companies.dto.AccountUserDto;
 import com.groupeisi.companies.entities.AccountUserEntity;
 import com.groupeisi.companies.service.AccountUserService;

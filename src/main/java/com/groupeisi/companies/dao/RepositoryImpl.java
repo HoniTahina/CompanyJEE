@@ -74,4 +74,10 @@ public class RepositoryImpl<T> implements Repository<T> {
 
 		return (T) session.get(t.getClass(), id);
 	}
+
+	@Override
+	public T get(String id, T t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
