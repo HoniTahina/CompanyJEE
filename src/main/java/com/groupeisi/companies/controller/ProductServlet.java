@@ -1,9 +1,6 @@
 package com.groupeisi.companies.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.groupeisi.companies.dto.ProductDto;
-import com.groupeisi.companies.entities.ProductEntity;
 import com.groupeisi.companies.service.IProductService;
 import com.groupeisi.companies.service.ProductService;
 
@@ -21,7 +17,7 @@ import com.groupeisi.companies.service.ProductService;
  */
 @WebServlet(name = "product", value = "/product")
 public class ProductServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 2L;
 	private IProductService productService = new ProductService();
 
 	/**

@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import com.groupeisi.companies.dto.ProductDto;
 import com.groupeisi.companies.dto.PurchaseDto;
 import com.groupeisi.companies.entities.ProductEntity;
-import com.groupeisi.companies.entities.PurchaseEntity;
 import com.groupeisi.companies.service.IProductService;
 import com.groupeisi.companies.service.IPurchaseService;
 import com.groupeisi.companies.service.ProductService;
@@ -27,7 +26,7 @@ import com.groupeisi.companies.service.PurchaseService;
  */
 @WebServlet(name = "purchase", value = "/purchase")
 public class PurchaseServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 3L;
 	private IPurchaseService purchaseService = new PurchaseService();
 	private IProductService productService = new ProductService();
 	Logger log = LoggerFactory.getLogger(PurchaseServlet.class);

@@ -33,6 +33,7 @@
            <artifactId>jstl</artifactId>
            <version>1.2</version>
        </dependency>
+       
        <!-- Mysql connector dependencies -->
        <dependency>
         <groupId>mysql</groupId>

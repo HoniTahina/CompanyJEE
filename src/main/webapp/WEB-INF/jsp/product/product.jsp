@@ -23,7 +23,7 @@
 				<c:forEach items="${productList}" var="product">
 					<tr>
 						<td>${product.name}</td>
-						<td>${product.reference}</td>
+						<td>${product.ref}</td>
 						<td>${product.stock}</td>
 					</tr>
 				</c:forEach>

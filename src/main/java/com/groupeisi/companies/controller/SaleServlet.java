@@ -22,22 +22,13 @@ import com.groupeisi.companies.service.ISaleService;
 import com.groupeisi.companies.service.ProductService;
 import com.groupeisi.companies.service.SaleService;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import com.groupeisi.companies.dto.AccountUserDto;
-import com.groupeisi.companies.entities.AccountUserEntity;
-
-import com.groupeisi.companies.service.AccountUserService;
-import com.groupeisi.companies.service.IAccountUserService;
 
 /**
  * Servlet implementation class AdminServlet
  */
 @WebServlet(name = "sale", value = "/sale")
 public class SaleServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4L;
 	private ISaleService saleService = new SaleService();
 	private IProductService productService = new ProductService();
 	Logger log = LoggerFactory.getLogger(SaleServlet.class);

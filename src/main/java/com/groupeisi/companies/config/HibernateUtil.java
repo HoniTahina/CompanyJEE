@@ -1,6 +1,5 @@
 package com.groupeisi.companies.config;
 
-import java.util.Map;
 import java.util.Properties;
 
 import org.hibernate.SessionFactory;
